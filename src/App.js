@@ -1,11 +1,10 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import Articles from "./components/Articles";
-import Article from "./components/Article";
-import Comments from "./components/Comments";
+import Header from "./components/Header.js";
+import Nav from "./components/Nav.js";
+import Footer from "./components/Footer.js";
+import Articles from "./components/Articles.js";
+import SingleArticle from "./components/SingleArticle.js";
 
 function App() {
   return (
@@ -15,9 +14,8 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Articles />} />
-          <Route path="/articles" element={<Articles />} />
-          <Route path="/articles/:article_id" element={<Article />} />
-          <Route path="/articles/:article_id/comments" element={<Comments />} />
+          <Route path="articles/:article_id" element={<SingleArticle />} />
+          <Route path="articles/topic/:slug" element={<Articles />} />
         </Routes>
         <Footer />
       </div>
