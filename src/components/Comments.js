@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/User";
 import { getComments, postComment } from "../utils/api";
+import { formatDate } from "../utils/utils";
 
 function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -35,7 +36,7 @@ function Comments({ article_id }) {
           return (
             <li key={comment.comment_id}>
               <p>
-                {comment.author} at {comment.created_at}
+                {comment.author} on {formatDate(comment.created_at)}
               </p>
               <p>{comment.body}</p>
               <p>Votes: {comment.votes}</p>

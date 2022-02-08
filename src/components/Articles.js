@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getArticles } from "../utils/api";
+import { formatDate } from "../utils/utils";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -23,7 +24,7 @@ function Articles() {
             <li key={article.article_id}>
               <h2>{article.title}</h2>
               <p>
-                By {article.author} created at {article.created_at}
+                By {article.author} created on {formatDate(article.created_at)}
               </p>
               <p>Comments: {article.comment_count}</p>
               <p>Votes: {article.votes}</p>
