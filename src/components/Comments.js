@@ -18,7 +18,8 @@ function Comments({ article_id }) {
     setBody(event.target.value);
   }
 
-  function handleSubmit() {
+  function handleSubmit(event) {
+    event.preventDefault();
     postComment(article_id, loggedInUser.username, body);
     setBody("");
   }
