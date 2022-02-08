@@ -39,3 +39,17 @@ export const addVote = (article_id) => {
       return data;
     });
 };
+
+export const postComment = (article_id, username, body) => {
+  console.log(article_id);
+  console.log(username);
+  console.log(body);
+  return articlesApi
+    .post(`/articles/${article_id}/comments`, {
+      username: username,
+      body: body,
+    })
+    .then(({ data }) => {
+      return data;
+    });
+};
