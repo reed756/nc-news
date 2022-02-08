@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleArticle } from "../utils/api";
+import Comments from "./Comments";
 
 function SingleArticle() {
   const { article_id } = useParams();
@@ -21,6 +22,7 @@ function SingleArticle() {
       <p>{article.body}</p>
       <p>Comment count: {article.comment_count}</p>
       <p>Votes: {article.votes}</p>
+      <Comments article_id={article_id} />
     </div>
   );
 }
