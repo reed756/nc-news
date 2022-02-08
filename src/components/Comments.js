@@ -12,7 +12,7 @@ function Comments({ article_id }) {
 
   return (
     <>
-      <p>List of comments</p>
+      <p>List of comments:</p>
       <ul>
         {comments.map((comment) => {
           return (
