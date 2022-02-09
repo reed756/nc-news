@@ -5,6 +5,7 @@ import Nav from "./components/Nav.js";
 import Footer from "./components/Footer.js";
 import Articles from "./components/Articles.js";
 import SingleArticle from "./components/SingleArticle.js";
+import ErrorPage from "./components/ErrorPage";
 import { useState } from "react";
 import { UserContext } from "./contexts/User";
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" element={<Articles />} />
             <Route path="/articles/:article_id" element={<SingleArticle />} />
             <Route path="/articles/topic/:slug" element={<Articles />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
         </div>

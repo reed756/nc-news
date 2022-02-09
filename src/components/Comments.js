@@ -9,9 +9,15 @@ function Comments({ article_id }) {
   const [body, setBody] = useState("");
 
   useEffect(() => {
+    let isApiSubscribed = true;
     getComments(article_id).then(({ comments }) => {
-      setComments(comments);
+      if (isApiSubscribed) {
+        setComments(comments);
+      }
     });
+    return () => {
+      isApiSubscribed = false;
+    };
   }, [article_id, comments]);
 
   function handleChange(event) {
