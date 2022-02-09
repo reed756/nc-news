@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/User";
-import { getComments, postComment } from "../utils/api";
+import { deleteComment, getComments, postComment } from "../utils/api";
 import { formatDate } from "../utils/utils";
 
 function Comments({ article_id }) {
@@ -41,6 +41,15 @@ function Comments({ article_id }) {
               </p>
               <p>{comment.body}</p>
               <p>Votes: {comment.votes}</p>
+              {loggedInUser.username === comment.author ? (
+                <button
+                  onClick={() => {
+                    deleteComment(comment.comment_id);
+                  }}
+                >
+                  DELETE
+                </button>
+              ) : null}
             </li>
           );
         })}
