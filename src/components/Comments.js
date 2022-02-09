@@ -12,7 +12,7 @@ function Comments({ article_id }) {
     getComments(article_id).then(({ comments }) => {
       setComments(comments);
     });
-  }, [article_id]);
+  }, [article_id, comments]);
 
   function handleChange(event) {
     setBody(event.target.value);
