@@ -1,16 +1,21 @@
 import React, { useContext } from "react";
 import { UserContext } from "../contexts/User";
+import styles from "../styles/Header.module.css";
 
 function Header() {
   const { loggedInUser, setloggedInUser } = useContext(UserContext);
   return (
-    <header>
-      <h1>Northcoders News</h1>
-      <div>
-        <p>You are logged in as {loggedInUser.username}</p>
-        <button>LOG OUT</button>
+    <header className={styles.header}>
+      <h1 className={styles.headerTitle}>NC News</h1>
+      <div className={styles.userProfile}>
+        <p className={styles.userName}>{loggedInUser.username}</p>
+        <img
+          src={loggedInUser.avatar_url}
+          alt={loggedInUser.name}
+          className={styles.userAvatar}
+        />
       </div>
-      <img src={loggedInUser.avatar_url} alt={loggedInUser.name} />
+      <button className={styles.logOutButton}>LOG OUT</button>
     </header>
   );
 }

@@ -27,8 +27,6 @@ function Articles() {
     setSort_By(event.target.value);
   }
 
-  console.log(error);
-
   if (isLoading) return <p>Loading...</p>;
   if (error) {
     return (

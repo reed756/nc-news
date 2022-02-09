@@ -34,7 +34,7 @@ function Comments({ article_id }) {
     <>
       <form onSubmit={handleSubmit}>
         <label>Comment as {loggedInUser.username}</label>
-        <textarea onChange={handleChange} value={body}></textarea>
+        <textarea onChange={handleChange} value={body} required></textarea>
         <button type="submit">COMMENT</button>
       </form>
       <p>List of comments:</p>

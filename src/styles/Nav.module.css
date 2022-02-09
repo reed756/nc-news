@@ -1,0 +1,12 @@
+.nav {
+  margin-bottom: 15px;
+  background-color: #a8a8a1;
+  height: 40px;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #725a5c;
+  font-weight: 700;
+}

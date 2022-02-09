@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.headerTitle {
+  color: #725a5c;
+  font-size: xxx-large;
+  font-weight: 800;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #d4d0a4;
+  padding: 15px;
+}
+
+.userName {
+  font-weight: 700;
+  color: #725a5c;
+}
+
+.userAvatar {
+  height: 75px;
+  border-radius: 50%;
+  border: 2px solid #725a5c;
+}
+
+.logOutButton {
+  background-color: #d4d0a4;
+  font-weight: 700;
+  border-radius: 20px;
+  border: none;
+  padding: 5px;
+  box-shadow: 2px 2px 1px 1px;
+  color: #725a5c;
+  margin: 20px;
+}
