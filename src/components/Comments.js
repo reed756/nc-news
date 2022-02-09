@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/User";
 import { deleteComment, getComments, postComment } from "../utils/api";
 import { formatDate } from "../utils/utils";
+import styles from "../styles/Comments.module.css";
 
 function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -32,23 +33,32 @@ function Comments({ article_id }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>Comment as {loggedInUser.username}</label>
-        <textarea onChange={handleChange} value={body} required></textarea>
-        <button type="submit">COMMENT</button>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <label className={styles.label}>
+          Comment as {loggedInUser.username}
+        </label>
+        <textarea
+          onChange={handleChange}
+          value={body}
+          className={styles.textarea}
+          required
+        ></textarea>
+        <button className={styles.button} type="submit">
+          COMMENT
+        </button>
       </form>
-      <p>List of comments:</p>
-      <ul>
+      <ul className={styles.unorderedList}>
         {comments.map((comment) => {
           return (
-            <li key={comment.comment_id}>
-              <p>
-                {comment.author} on {formatDate(comment.created_at)}
+            <li className={styles.listItem} key={comment.comment_id}>
+              <p className={styles.paragraphAuthor}>
+                {comment.author} - {formatDate(comment.created_at)}
               </p>
-              <p>{comment.body}</p>
-              <p>Votes: {comment.votes}</p>
+              <p className={styles.paragraph}>{comment.body}</p>
+              <p className={styles.paragraph}>Votes: {comment.votes}</p>
               {loggedInUser.username === comment.author ? (
                 <button
+                  className={styles.button}
                   onClick={() => {
                     deleteComment(comment.comment_id);
                   }}
