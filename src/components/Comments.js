@@ -41,6 +41,7 @@ function Comments({ article_id }) {
           onChange={handleChange}
           value={body}
           className={styles.textarea}
+          placeholder="What are your thoughts?"
           required
         ></textarea>
         <button className={styles.button} type="submit">
