@@ -4,11 +4,12 @@ const articlesApi = axios.create({
   baseURL: "https://james-news-app.herokuapp.com/api",
 });
 
-export const getArticles = (slug) => {
+export const getArticles = (slug, sort_by) => {
   return articlesApi
     .get(`/articles`, {
       params: {
         topic: slug,
+        sort_by: sort_by,
       },
     })
     .then(({ data }) => {
@@ -41,9 +42,6 @@ export const addVote = (article_id) => {
 };
 
 export const postComment = (article_id, username, body) => {
-  console.log(article_id);
-  console.log(username);
-  console.log(body);
   return articlesApi
     .post(`/articles/${article_id}/comments`, {
       username: username,
