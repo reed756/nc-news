@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getArticles } from "../utils/api";
-import { formatDate } from "../utils/utils";
+import { formatDate, formatText } from "../utils/utils";
+import styles from "../styles/Articles.module.css";
 import Error from "./Error";
 
 function Articles() {
@@ -38,24 +39,27 @@ function Articles() {
   }
   return (
     <>
-      <h2>{slug ? slug : "All"} Articles</h2>
-      <form>
-        <label>Sort by:</label>
-        <select onChange={handleChange}>
-          <option>created_at</option>
-          <option>title</option>
-          <option>votes</option>
-          <option>author</option>
+      <h2 className={styles.articlesHeading}>
+        {slug ? formatText(slug) : "All"} Articles
+      </h2>
+      <form className={styles.sortByForm}>
+        <label className={styles.sortByLabel}>Sort By: </label>
+        <select onChange={handleChange} className={styles.sortBySelect}>
+          <option className={styles.sortByOption}>created_at</option>
+          <option className={styles.sortByOption}>title</option>
+          <option className={styles.sortByOption}>votes</option>
+          <option className={styles.sortByOption}>author</option>
         </select>
       </form>
-      <ul>
+      <ul className={styles.articlesUnorderedList}>
         {articles.map((article) => {
           return (
             <Link
               to={`/articles/${article.article_id}`}
               key={article.article_id}
+              className={styles.articlesLink}
             >
-              <li key={article.article_id}>
+              <li key={article.article_id} className={styles.articlesListItem}>
                 <h2>{article.title}</h2>
                 <p>
                   By {article.author} created on{" "}

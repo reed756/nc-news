@@ -1,0 +1,43 @@
+.articleDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: justify;
+  padding: 0 20px 0 20px;
+  margin-bottom: 20px;
+}
+
+.articleTitle {
+  margin-bottom: 10px;
+  color: #725a5c;
+  font-weight: 800;
+}
+
+.articleAuthor {
+  margin-bottom: 10px;
+  color: #725a5c;
+  font-weight: 700;
+}
+
+.articleText {
+  color: #848c92;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.voteButton {
+  background-color: #d4d0a4;
+  font-weight: 700;
+  border-radius: 20px;
+  border: none;
+  padding: 5px;
+  box-shadow: 2px 2px 1px 1px;
+  color: #725a5c;
+  margin-bottom: 20px;
+}

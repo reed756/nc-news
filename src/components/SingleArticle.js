@@ -4,6 +4,7 @@ import { addVote, getSingleArticle } from "../utils/api";
 import { formatDate } from "../utils/utils";
 import Comments from "./Comments";
 import Error from "./Error";
+import styles from "../styles/SingleArticle.module.css";
 
 function SingleArticle() {
   const { article_id } = useParams();
@@ -36,15 +37,21 @@ function SingleArticle() {
   }
 
   return (
-    <div>
-      <h2>{article.title}</h2>
-      <h3>
+    <div className={styles.articleDiv}>
+      <h2 className={styles.articleTitle}>{article.title}</h2>
+      <h3 className={styles.articleAuthor}>
         Created by {article.author} on {formatDate(article.created_at)}
       </h3>
-      <p>{article.body}</p>
-      <p>Comment count: {article.comment_count}</p>
-      <p>Votes: {votesCount}</p>
-      <button onClick={handleClick}>UPVOTE</button>
+      <p className={styles.articleText}>{article.body}</p>
+      <p className={styles.articleText}>
+        Comment count: {article.comment_count}
+      </p>
+      <p className={styles.articleText}>Votes: {votesCount}</p>
+      <div className={styles.buttonWrapper}>
+        <button onClick={handleClick} className={styles.voteButton}>
+          UPVOTE
+        </button>
+      </div>
       <Comments article_id={article_id} />
     </div>
   );

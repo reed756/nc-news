@@ -1,0 +1,40 @@
+.articlesHeading {
+  color: #725a5c;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sortByForm {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sortByLabel {
+  color: #725a5c;
+}
+
+.sortBySelect {
+  border: none;
+  background-color: #d4d0a4;
+  color: #725a5c;
+  font-weight: 800;
+}
+
+.articlesUnorderedList {
+  padding: 10px 10px 30px 10px;
+}
+
+.articlesLink {
+  text-decoration: none;
+  color: #725a5c;
+}
+
+.articlesListItem {
+  margin-bottom: 20px;
+  background-color: #d4d0a4;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
