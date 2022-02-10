@@ -6,6 +6,7 @@ import styles from "../styles/Articles.module.css";
 import Error from "./Error";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faComment } from "@fortawesome/free-solid-svg-icons";
+import { SpinningCircles } from "react-loading-icons";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -36,7 +37,7 @@ function Articles() {
     }
   }
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <SpinningCircles />;
   if (error) {
     return (
       <Error
@@ -73,18 +74,22 @@ function Articles() {
               className={styles.articlesLink}
             >
               <li key={article.article_id} className={styles.articlesListItem}>
-                <h2>{article.title}</h2>
-                <p>
-                  By {article.author} created on{" "}
-                  {formatDate(article.created_at)}
-                </p>
-                <p>
-                  <FontAwesomeIcon icon={faComment} /> {article.comment_count}{" "}
-                  Comments{" "}
-                </p>
-                <p>
-                  <FontAwesomeIcon icon={faThumbsUp} /> {article.votes} Votes
-                </p>
+                <div>
+                  <h2>{article.title}</h2>
+                  <p>
+                    By {article.author} created on{" "}
+                    {formatDate(article.created_at)}
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <FontAwesomeIcon icon={faComment} /> {article.comment_count}{" "}
+                    Comments{" "}
+                  </p>
+                  <p>
+                    <FontAwesomeIcon icon={faThumbsUp} /> {article.votes} Votes
+                  </p>
+                </div>
               </li>
             </Link>
           );
