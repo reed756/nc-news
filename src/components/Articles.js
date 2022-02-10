@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getArticles } from "../utils/api";
-import { formatDate, formatText } from "../utils/utils";
+import { formatDate, formatSortBy, formatText } from "../utils/utils";
 import styles from "../styles/Articles.module.css";
 import Error from "./Error";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,11 +11,12 @@ function Articles() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [sort_by, setSort_By] = useState("created_at");
+  const [order, setOrder] = useState("DESC");
   const [error, setError] = useState(null);
   const { slug } = useParams();
 
   useEffect(() => {
-    getArticles(slug, sort_by)
+    getArticles(slug, sort_by, order)
       .then(({ articles }) => {
         setArticles(articles);
         setIsLoading(false);
@@ -24,10 +25,15 @@ function Articles() {
         setIsLoading(false);
         setError({ err });
       });
-  }, [slug, sort_by]);
+  }, [slug, sort_by, order]);
 
   function handleChange(event) {
-    setSort_By(event.target.value);
+    if (event.target.value === "ASC" || event.target.value === "DESC") {
+      setOrder(event.target.value);
+    } else {
+      console.log(event.target.value);
+      setSort_By(formatSortBy(event.target.value));
+    }
   }
 
   if (isLoading) return <p>Loading...</p>;
@@ -47,10 +53,15 @@ function Articles() {
       <form className={styles.sortByForm}>
         <label className={styles.sortByLabel}>Sort By: </label>
         <select onChange={handleChange} className={styles.sortBySelect}>
-          <option className={styles.sortByOption}>created_at</option>
-          <option className={styles.sortByOption}>title</option>
-          <option className={styles.sortByOption}>votes</option>
-          <option className={styles.sortByOption}>author</option>
+          <option className={styles.sortByOption}>Created At</option>
+          <option className={styles.sortByOption}>Title</option>
+          <option className={styles.sortByOption}>Votes</option>
+          <option className={styles.sortByOption}>Author</option>
+        </select>
+        <label className={styles.sortByLabel}>Order: </label>
+        <select onChange={handleChange} className={styles.sortBySelect}>
+          <option className={styles.sortByOption}>DESC</option>
+          <option className={styles.sortByOption}>ASC</option>
         </select>
       </form>
       <ul className={styles.articlesUnorderedList}>

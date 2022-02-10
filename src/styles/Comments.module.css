@@ -42,3 +42,9 @@
   color: #848c92;
   font-weight: 800;
 }
+
+.button:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  cursor: pointer;
+}

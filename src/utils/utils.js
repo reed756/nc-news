@@ -11,3 +11,9 @@ export const formatText = (input) => {
     return input.slice(0, 1).toUpperCase() + input.slice(1, input.length);
   }
 };
+
+export const formatSortBy = (input) => {
+  if (input) {
+    return input.toLowerCase().replace(" ", "_");
+  }
+};

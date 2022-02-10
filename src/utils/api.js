@@ -4,12 +4,13 @@ const articlesApi = axios.create({
   baseURL: "https://james-news-app.herokuapp.com/api",
 });
 
-export const getArticles = (slug, sort_by) => {
+export const getArticles = (slug, sort_by, order) => {
   return articlesApi
     .get(`/articles`, {
       params: {
         topic: slug,
         sort_by: sort_by,
+        order: order,
       },
     })
     .then(({ data }) => {

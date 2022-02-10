@@ -11,6 +11,7 @@
 
 .sortByLabel {
   color: #725a5c;
+  margin-left: 10px;
 }
 
 .sortBySelect {
@@ -42,6 +43,14 @@
 .articlesListItem:hover {
   -webkit-filter: invert(100%);
   filter: invert(100%);
+}
+
+.sortBySelect:hover {
+  cursor: pointer;
+}
+
+.sortBySelect:focus {
+  outline: none;
 }
 
 @media only screen and (min-width: 768px) {

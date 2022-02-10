@@ -45,3 +45,9 @@
 .likeIcon {
   margin-left: 5px;
 }
+
+.voteButton:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  cursor: pointer;
+}
