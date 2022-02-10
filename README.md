@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+# NC News App
+
+Hosted version - https://angry-lamport-d45c0a.netlify.app/
+Back-end API - https://james-news-app.herokuapp.com/api
+Back-end Github repository - https://github.com/reed756/be-nc-news
+
+## Summary
+
+Northcoders News is a social news aggregation, web content rating, and discussion website.
+
+Northcoders News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article.
+
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
