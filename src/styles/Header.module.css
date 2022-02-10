@@ -42,3 +42,11 @@
   color: #725a5c;
   margin: 20px;
 }
+
+@media only screen and (min-width: 768px) {
+  .header {
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    padding-left: 10px;
+  }
+}
