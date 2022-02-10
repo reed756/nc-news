@@ -49,4 +49,7 @@
     grid-template-columns: 50% 25% 25%;
     padding-left: 10px;
   }
+  .userProfile {
+    border-radius: 20px;
+  }
 }

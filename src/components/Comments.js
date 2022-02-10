@@ -3,6 +3,8 @@ import { UserContext } from "../contexts/User";
 import { deleteComment, getComments, postComment } from "../utils/api";
 import { formatDate } from "../utils/utils";
 import styles from "../styles/Comments.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -64,7 +66,7 @@ function Comments({ article_id }) {
                     deleteComment(comment.comment_id);
                   }}
                 >
-                  DELETE
+                  DELETE <FontAwesomeIcon icon={faTrashCan} />
                 </button>
               ) : null}
             </li>

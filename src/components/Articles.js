@@ -4,6 +4,8 @@ import { getArticles } from "../utils/api";
 import { formatDate, formatText } from "../utils/utils";
 import styles from "../styles/Articles.module.css";
 import Error from "./Error";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp, faComment } from "@fortawesome/free-solid-svg-icons";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -65,8 +67,13 @@ function Articles() {
                   By {article.author} created on{" "}
                   {formatDate(article.created_at)}
                 </p>
-                <p>Comments: {article.comment_count}</p>
-                <p>Votes: {article.votes}</p>
+                <p>
+                  <FontAwesomeIcon icon={faComment} /> {article.comment_count}{" "}
+                  Comments{" "}
+                </p>
+                <p>
+                  <FontAwesomeIcon icon={faThumbsUp} /> {article.votes} Votes
+                </p>
               </li>
             </Link>
           );

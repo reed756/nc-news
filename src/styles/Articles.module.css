@@ -39,6 +39,11 @@
   align-items: flex-start;
 }
 
+.articlesListItem:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
 @media only screen and (min-width: 768px) {
   .articlesUnorderedList {
     display: grid;
@@ -49,5 +54,6 @@
     margin: 5px;
     display: flex;
     justify-content: center;
+    padding: 20px;
   }
 }

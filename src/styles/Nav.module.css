@@ -10,3 +10,14 @@
   color: #725a5c;
   font-weight: 700;
 }
+
+.unorderedList {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.navLink:hover {
+  color: #d4d0a4;
+}
