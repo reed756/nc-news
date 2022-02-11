@@ -1,7 +1,9 @@
 # NC News App
 
 Hosted version - https://angry-lamport-d45c0a.netlify.app/
+
 Back-end API - https://james-news-app.herokuapp.com/api
+
 Back-end Github repository - https://github.com/reed756/be-nc-news
 
 ## Summary
