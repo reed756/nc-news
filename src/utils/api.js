@@ -58,3 +58,13 @@ export const deleteComment = (comment_id) => {
     return data;
   });
 };
+
+export const addVoteComment = (comment_id) => {
+  return articlesApi
+    .patch(`/comments/${comment_id}`, {
+      inc_votes: 1,
+    })
+    .then(({ data }) => {
+      return data;
+    });
+};

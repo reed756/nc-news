@@ -45,10 +45,6 @@ function SingleArticle() {
         Created by {article.author} on {formatDate(article.created_at)}
       </h3>
       <p className={styles.articleText}>{article.body}</p>
-      {/* <p className={styles.articleText}>
-        Comment count: {article.comment_count}
-      </p>
-      <p className={styles.articleText}>Votes: {votesCount}</p> */}
       <div className={styles.buttonWrapper}>
         <button
           icon="fa-solid fa-thumbs-up"
