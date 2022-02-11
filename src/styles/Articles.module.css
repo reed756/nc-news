@@ -19,6 +19,7 @@
   background-color: #d4d0a4;
   color: #725a5c;
   font-weight: 800;
+  transition: 150ms;
 }
 
 .articlesUnorderedList {
@@ -38,19 +39,23 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  transition: 150ms;
 }
 
 .articlesListItem:hover {
   -webkit-filter: invert(100%);
   filter: invert(100%);
+  transition: 150ms;
 }
 
 .sortBySelect:hover {
   cursor: pointer;
+  transition: 150ms;
 }
 
 .sortBySelect:focus {
   outline: none;
+  transition: 150ms;
 }
 
 @media only screen and (min-width: 768px) {
@@ -65,8 +70,4 @@
     justify-content: space-between;
     padding: 20px;
   }
-}
-
-.spinningCircles {
-  color: black;
 }

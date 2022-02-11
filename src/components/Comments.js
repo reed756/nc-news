@@ -10,6 +10,7 @@ import { formatDate } from "../utils/utils";
 import styles from "../styles/Comments.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import moment from "moment";
 
 function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -61,7 +62,8 @@ function Comments({ article_id }) {
           return (
             <li className={styles.listItem} key={comment.comment_id}>
               <p className={styles.paragraphAuthor}>
-                {comment.author} - {formatDate(comment.created_at)}
+                {comment.author} -{" "}
+                {moment(formatDate(comment.created_at)).fromNow()}
               </p>
               <p className={styles.paragraph}>{comment.body}</p>
               <button

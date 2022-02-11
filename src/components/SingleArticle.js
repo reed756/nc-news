@@ -7,6 +7,7 @@ import Error from "./Error";
 import styles from "../styles/SingleArticle.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import moment from "moment";
 
 function SingleArticle() {
   const { article_id } = useParams();
@@ -42,7 +43,8 @@ function SingleArticle() {
     <div className={styles.articleDiv}>
       <h2 className={styles.articleTitle}>{article.title}</h2>
       <h3 className={styles.articleAuthor}>
-        Created by {article.author} on {formatDate(article.created_at)}
+        Created by {article.author}{" "}
+        {moment(formatDate(article.created_at)).fromNow()}
       </h3>
       <p className={styles.articleText}>{article.body}</p>
       <div className={styles.buttonWrapper}>

@@ -40,6 +40,7 @@
   box-shadow: 2px 2px 1px 1px;
   color: #725a5c;
   margin-bottom: 20px;
+  transition: 150ms;
 }
 
 .likeIcon {
@@ -50,4 +51,5 @@
   -webkit-filter: invert(100%);
   filter: invert(100%);
   cursor: pointer;
+  transition: 150ms;
 }

@@ -7,6 +7,7 @@ import Error from "./Error";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faComment } from "@fortawesome/free-solid-svg-icons";
 import { SpinningCircles } from "react-loading-icons";
+import moment from "moment";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -76,8 +77,8 @@ function Articles() {
                 <div>
                   <h2>{article.title}</h2>
                   <p>
-                    By {article.author} created on{" "}
-                    {formatDate(article.created_at)}
+                    By {article.author} created{" "}
+                    {moment(formatDate(article.created_at)).fromNow()}
                   </p>
                 </div>
                 <div>
