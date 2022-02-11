@@ -68,3 +68,9 @@ export const addVoteComment = (comment_id) => {
       return data;
     });
 };
+
+export const getUsers = () => {
+  return articlesApi.get("/users").then(({ data }) => {
+    return data;
+  });
+};
