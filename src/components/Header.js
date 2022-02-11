@@ -5,7 +5,7 @@ import styles from "../styles/Header.module.css";
 
 function Header() {
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
-  const [username, setUsername] = useState("");
+
   function handleClick() {
     setLoggedInUser(null);
   }
@@ -23,7 +23,9 @@ function Header() {
             />
           </div>
           <button className={styles.logOutButton} onClick={handleClick}>
-            <Link to={"/login"}>LOG OUT</Link>
+            <Link to={"/login"} className={styles.logOutLink}>
+              LOG OUT
+            </Link>
           </button>
         </>
       ) : null}

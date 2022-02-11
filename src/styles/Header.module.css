@@ -42,6 +42,19 @@
   box-shadow: 2px 2px 1px 1px;
   color: #725a5c;
   margin: 20px;
+  text-decoration: none;
+  transition: 150ms;
+}
+
+.logOutButton:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  transition: 150ms;
+  cursor: pointer;
+}
+
+.logOutLink {
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 768px) {

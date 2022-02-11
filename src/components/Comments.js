@@ -1,22 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/User";
-import {
-  deleteComment,
-  getComments,
-  postComment,
-  addVoteComment,
-} from "../utils/api";
+import { deleteComment, getComments, postComment } from "../utils/api";
 import { formatDate } from "../utils/utils";
 import styles from "../styles/Comments.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
+import Vote from "./Vote";
 
 function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
   const { loggedInUser, setloggedInUser } = useContext(UserContext);
   const [body, setBody] = useState("");
-  // const [votesCount, setVotesCount] = useState(0);
 
   useEffect(() => {
     let isApiSubscribed = true;
@@ -28,7 +23,7 @@ function Comments({ article_id }) {
     return () => {
       isApiSubscribed = false;
     };
-  }, [article_id, comments]);
+  }, [article_id]);
 
   function handleChange(event) {
     setBody(event.target.value);
@@ -66,16 +61,7 @@ function Comments({ article_id }) {
                 {moment(formatDate(comment.created_at)).fromNow()}
               </p>
               <p className={styles.paragraph}>{comment.body}</p>
-              <button
-                icon="fa-solid fa-thumbs-up"
-                className={styles.button}
-                onClick={() => {
-                  // setVotesCount((currCount) => currCount + 1);
-                  addVoteComment(comment.comment_id);
-                }}
-              >
-                UPVOTE <FontAwesomeIcon icon={faThumbsUp} /> {comment.votes}
-              </button>
+              <Vote votes={comment.votes} comment_id={comment.comment_id} />
               {loggedInUser.username === comment.author ? (
                 <button
                   className={styles.button}

@@ -25,8 +25,8 @@ function Login() {
   }
   return (
     <form className={styles.loginForm} onSubmit={handleSubmit}>
-      <label className={styles.loginLabel}>Username</label>
-      <input className={styles.logininput} onChange={handleChange}></input>
+      <label className={styles.loginLabel}>Username: </label>
+      <input className={styles.loginInput} onChange={handleChange}></input>
       <button className={styles.loginButton}>LOGIN</button>
     </form>
   );

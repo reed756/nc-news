@@ -26,7 +26,8 @@ function SingleArticle() {
       });
   }, [article_id]);
 
-  function handleClick() {
+  function handleClick(event) {
+    event.target.setAttribute("disabled", true);
     setVotesCount((currCount) => currCount + 1);
     addVote(article_id);
   }
