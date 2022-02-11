@@ -32,7 +32,6 @@ function Articles() {
     if (event.target.value === "ASC" || event.target.value === "DESC") {
       setOrder(event.target.value);
     } else {
-      console.log(event.target.value);
       setSort_By(formatSortBy(event.target.value));
     }
   }

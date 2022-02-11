@@ -15,7 +15,7 @@ function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
   const { loggedInUser, setloggedInUser } = useContext(UserContext);
   const [body, setBody] = useState("");
-  const [votesCount, setVotesCount] = useState(0);
+  // const [votesCount, setVotesCount] = useState(0);
 
   useEffect(() => {
     let isApiSubscribed = true;
@@ -68,7 +68,7 @@ function Comments({ article_id }) {
                 icon="fa-solid fa-thumbs-up"
                 className={styles.button}
                 onClick={() => {
-                  setVotesCount((currCount) => currCount + 1);
+                  // setVotesCount((currCount) => currCount + 1);
                   addVoteComment(comment.comment_id);
                 }}
               >
