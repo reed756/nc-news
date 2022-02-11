@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { UserContext } from "../contexts/User";
 import styles from "../styles/Header.module.css";
 
@@ -15,7 +16,9 @@ function Header() {
           className={styles.userAvatar}
         />
       </div>
-      <button className={styles.logOutButton}>LOG OUT</button>
+      <button className={styles.logOutButton}>
+        <Link to={"/login"}>LOG OUT</Link>
+      </button>
     </header>
   );
 }
