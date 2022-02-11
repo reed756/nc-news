@@ -37,7 +37,7 @@ function Articles() {
     }
   }
 
-  if (isLoading) return <SpinningCircles />;
+  if (isLoading) return <SpinningCircles className={styles.spinningCircles} />;
   if (error) {
     return (
       <Error
