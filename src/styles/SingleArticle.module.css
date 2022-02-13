@@ -53,3 +53,7 @@
   cursor: pointer;
   transition: 150ms;
 }
+.loadingCircle {
+  height: 100%;
+  width: 100%;
+}

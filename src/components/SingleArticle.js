@@ -8,21 +8,26 @@ import styles from "../styles/SingleArticle.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 function SingleArticle() {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
   const [votesCount, setVotesCount] = useState(0);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getSingleArticle(article_id)
       .then(({ article }) => {
         setArticle(article);
         setVotesCount(article.votes);
+        setIsLoading(false);
       })
       .catch((err) => {
         setError({ err });
+        setIsLoading(false);
       });
   }, [article_id]);
 
@@ -31,6 +36,16 @@ function SingleArticle() {
     setVotesCount((currCount) => currCount + 1);
     addVote(article_id);
   }
+  if (isLoading)
+    return (
+      <Box sx={{ width: "100%", height: "70%" }}>
+        <CircularProgress
+          color="success"
+          className={styles.loadingCircle}
+          size="small"
+        />
+      </Box>
+    );
   if (error) {
     return (
       <Error

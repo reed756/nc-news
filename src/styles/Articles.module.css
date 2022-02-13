@@ -72,3 +72,7 @@
     padding: 20px;
   }
 }
+.loadingCircle {
+  height: 100%;
+  width: 100%;
+}

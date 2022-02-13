@@ -6,8 +6,9 @@ import styles from "../styles/Articles.module.css";
 import Error from "./Error";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faComment } from "@fortawesome/free-solid-svg-icons";
-import { SpinningCircles } from "react-loading-icons";
 import moment from "moment";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -37,7 +38,16 @@ function Articles() {
     }
   }
 
-  if (isLoading) return <SpinningCircles className={styles.spinningCircles} />;
+  if (isLoading)
+    return (
+      <Box sx={{ width: "100%", height: "70%" }}>
+        <CircularProgress
+          color="success"
+          className={styles.loadingCircle}
+          size="small"
+        />
+      </Box>
+    );
   if (error) {
     return (
       <Error

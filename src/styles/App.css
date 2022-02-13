@@ -1,5 +1,6 @@
 .App {
   min-height: 100vh;
+  min-width: 100vw;
   background-color: #e3e8e6;
 }
 
