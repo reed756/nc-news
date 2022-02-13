@@ -4,24 +4,6 @@
   text-align: center;
 }
 
-.sortByForm {
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.sortByLabel {
-  color: #725a5c;
-  margin-left: 10px;
-}
-
-.sortBySelect {
-  border: none;
-  background-color: #d4d0a4;
-  color: #725a5c;
-  font-weight: 800;
-  transition: 150ms;
-}
-
 .articlesUnorderedList {
   padding: 10px 10px 30px 10px;
 }
@@ -45,16 +27,6 @@
 .articlesListItem:hover {
   -webkit-filter: invert(100%);
   filter: invert(100%);
-  transition: 150ms;
-}
-
-.sortBySelect:hover {
-  cursor: pointer;
-  transition: 150ms;
-}
-
-.sortBySelect:focus {
-  outline: none;
   transition: 150ms;
 }
 

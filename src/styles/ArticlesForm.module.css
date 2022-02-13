@@ -1,0 +1,27 @@
+.sortBySelect:hover {
+  cursor: pointer;
+  transition: 150ms;
+}
+
+.sortBySelect:focus {
+  outline: none;
+  transition: 150ms;
+}
+
+.sortByForm {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sortByLabel {
+  color: #725a5c;
+  margin-left: 10px;
+}
+
+.sortBySelect {
+  border: none;
+  background-color: #d4d0a4;
+  color: #725a5c;
+  font-weight: 800;
+  transition: 150ms;
+}

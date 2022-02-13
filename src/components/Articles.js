@@ -9,6 +9,7 @@ import { faThumbsUp, faComment } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import ArticlesForm from "./ArticlesForm";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -30,13 +31,13 @@ function Articles() {
       });
   }, [slug, sort_by, order]);
 
-  function handleChange(event) {
-    if (event.target.value === "ASC" || event.target.value === "DESC") {
-      setOrder(event.target.value);
-    } else {
-      setSort_By(formatSortBy(event.target.value));
-    }
-  }
+  // function handleChange(event) {
+  //   if (event.target.value === "ASC" || event.target.value === "DESC") {
+  //     setOrder(event.target.value);
+  //   } else {
+  //     setSort_By(formatSortBy(event.target.value));
+  //   }
+  // }
 
   if (isLoading)
     return (
@@ -61,7 +62,7 @@ function Articles() {
       <h2 className={styles.articlesHeading}>
         {slug ? formatText(slug) : "All"} Articles
       </h2>
-      <form className={styles.sortByForm}>
+      {/* <form className={styles.sortByForm}>
         <label className={styles.sortByLabel}>Sort By: </label>
         <select onChange={handleChange} className={styles.sortBySelect}>
           <option className={styles.sortByOption}>Created At</option>
@@ -74,7 +75,8 @@ function Articles() {
           <option className={styles.sortByOption}>DESC</option>
           <option className={styles.sortByOption}>ASC</option>
         </select>
-      </form>
+      </form> */}
+      <ArticlesForm setOrder={setOrder} setSort_By={setSort_By} />
       <ul className={styles.articlesUnorderedList}>
         {articles.map((article) => {
           return (
