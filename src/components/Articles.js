@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getArticles } from "../utils/api";
-import { formatDate, formatSortBy, formatText } from "../utils/utils";
+import { formatDate, formatText } from "../utils/utils";
 import styles from "../styles/Articles.module.css";
 import Error from "./Error";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -31,14 +31,6 @@ function Articles() {
       });
   }, [slug, sort_by, order]);
 
-  // function handleChange(event) {
-  //   if (event.target.value === "ASC" || event.target.value === "DESC") {
-  //     setOrder(event.target.value);
-  //   } else {
-  //     setSort_By(formatSortBy(event.target.value));
-  //   }
-  // }
-
   if (isLoading)
     return (
       <Box sx={{ width: "100%", height: "70%" }}>
@@ -62,20 +54,6 @@ function Articles() {
       <h2 className={styles.articlesHeading}>
         {slug ? formatText(slug) : "All"} Articles
       </h2>
-      {/* <form className={styles.sortByForm}>
-        <label className={styles.sortByLabel}>Sort By: </label>
-        <select onChange={handleChange} className={styles.sortBySelect}>
-          <option className={styles.sortByOption}>Created At</option>
-          <option className={styles.sortByOption}>Title</option>
-          <option className={styles.sortByOption}>Votes</option>
-          <option className={styles.sortByOption}>Author</option>
-        </select>
-        <label className={styles.sortByLabel}>Order: </label>
-        <select onChange={handleChange} className={styles.sortBySelect}>
-          <option className={styles.sortByOption}>DESC</option>
-          <option className={styles.sortByOption}>ASC</option>
-        </select>
-      </form> */}
       <ArticlesForm setOrder={setOrder} setSort_By={setSort_By} />
       <ul className={styles.articlesUnorderedList}>
         {articles.map((article) => {

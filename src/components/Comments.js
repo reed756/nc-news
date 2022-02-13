@@ -4,7 +4,7 @@ import { deleteComment, getComments, postComment } from "../utils/api";
 import { formatDate } from "../utils/utils";
 import styles from "../styles/Comments.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 import Vote from "./Vote";
 
