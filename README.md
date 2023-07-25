@@ -2,7 +2,7 @@
 
 Hosted version - https://nc-news-reed.netlify.app/
 
-Back-end API - https://james-news-app.herokuapp.com/api
+Back-end API - https://be-nc-news-diz4.onrender.com
 
 Back-end Github repository - https://github.com/reed756/be-nc-news
 
