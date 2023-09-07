@@ -12,6 +12,8 @@ Northcoders News is a social news aggregation, web content rating, and discussio
 
 Northcoders News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article.
 
+NC News was built using JavaScript, Node.js, React.js, Express.js. Also followed TDD principles and used Jest for testing both frontend and backend. Front End UI hosted on Netlify and Backend API hosted on Render.
+
 ## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
